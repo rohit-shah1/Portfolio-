@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 
-
+html{
+    scroll-behavior: smooth;
+}
 
 :root {
     --text-color: #222;
@@ -27,6 +29,12 @@ body {
     background-color: #ffffff;
     color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        135deg,
+        var(--section-blue) 0%,
+        var(--section-white) 50%,
+        var(--section-purple) 100%
+    );
 }
 
 
@@ -48,6 +56,23 @@ body {
     padding: 5px 10px;
     border: 2px solid var(--border-color);
 }
+.talk-btn {
+    padding: 12px 24px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.talk-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .navbar ul {
     display: flex;
     align-items: center;
@@ -71,7 +96,6 @@ body {
     width: 0;
     height: 2px;
     background: var(--accent-color);
-
     transition: width 0.3s ease;
 }
 .navbar ul li a:hover {
