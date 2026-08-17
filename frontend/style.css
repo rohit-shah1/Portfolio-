@@ -20,7 +20,19 @@ html{
     --section-white: #f4f4f5;
 }
 
-
+.cursor-circle {
+    position: fixed;
+    
+    border-radius: 50%;
+    
+    background: #222;
+    
+    pointer-events: none;
+    
+    z-index: 99999;
+    
+    transform: translate(-50%, -50%);
+}
 
 body {
     min-height: 100vh;
