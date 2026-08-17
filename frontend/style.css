@@ -148,6 +148,313 @@ main {
     );
 }
 
+.hero {
+    min-height: calc(100vh - 100px);
+
+    margin: 15px;
+
+    padding: 70px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        var(--section-blue) 0%,
+        var(--section-white) 50%,
+        var(--section-purple) 100%
+    );
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-tag {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    font-size: 15px;
+}
+
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+
+.hero-description {
+    max-width: 550px;
+    color: var(--muted-color);
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+
+.primary-btn {
+    background: #2563eb;
+
+    color: white;
+
+    border: 2px solid #2563eb;
+}
+
+
+.primary-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+
+.secondary-btn {
+    color: var(--text-color);
+
+    border: 1px solid rgba(34, 34, 34, 0.4);
+
+    background: rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+
+    transform: translateY(-3px);
+}
+
+
+.hero-visual {
+    width: 420px;
+    height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+
+.circle-1 {
+    width: 280px;
+    height: 280px;
+    background: rgba(37, 99, 235, 0.18);
+    top: 20px;
+    right: 20px;
+}
+
+
+.circle-2 {
+    width: 220px;
+    height: 220px;
+    background: rgba(189, 150, 238, 0.3);
+    bottom: 20px;
+    left: 20px;
+}
+
+
+
+.code-card {
+    width: 340px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 2;
+    transform: rotate(75deg);
+    transition: 1s ease;
+}
+
+
+.code-card:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
+
+
+
+.card-header {
+    display: flex;
+
+    gap: 7px;
+
+    margin-bottom: 25px;
+}
+
+
+.card-header span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #777;
+}
+
+
+
+.code-content {
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    line-height: 2;
+    color: #333;
+}
+
+
+.purple {
+    color: #7c3aed;
+}
+
+
+.green {
+    color: #16803c;
+}
+
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: auto;
+        padding: 70px 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 420px;
+        height: 350px;
+    }
+
+
+    .code-card {
+        width: min(340px, 90%);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero {
+        margin: 10px;
+
+        border-radius: 20px;
+
+        padding: 50px 20px;
+    }
+
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+
+    .hero-visual {
+        height: 300px;
+    }
+
+
+    .code-card {
+        font-size: 13px;
+    }
+}
 
 
 .footer-box {
