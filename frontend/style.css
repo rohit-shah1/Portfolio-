@@ -1,3 +1,6 @@
+/* =========================================
+   RESET
+========================================= */
 
 * {
     margin: 0;
@@ -5,7 +8,7 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -18,29 +21,24 @@ html{
     --section-blue: #a2baed;
     --section-purple: #bd96ee;
     --section-white: #f4f4f5;
+
+    --primary-blue: #2563eb;
+    --primary-blue-dark: #1d4ed8;
 }
 
-.cursor-circle {
-    position: fixed;
-    
-    border-radius: 50%;
-    
-    background: #222;
-    
-    pointer-events: none;
-    
-    z-index: 99999;
-    
-    transform: translate(-50%, -50%);
-}
+
+/* =========================================
+   BODY
+========================================= */
 
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+
     color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
+
     background: linear-gradient(
         135deg,
         var(--section-blue) 0%,
@@ -50,90 +48,178 @@ body {
 }
 
 
+/* =========================================
+   CURSOR TRAIL
+========================================= */
+
+.cursor-circle {
+    position: fixed;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--section-blue) 0%,
+        var(--section-white) 50%,
+        var(--section-purple) 100%
+    );
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 99999;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
 
 .navbar {
     min-height: 10vh;
+
     margin: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border:0.5px solid white ;
-    border-radius: 30px;
     padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 1000;
+
+    border: 0.5px solid white;
+    border-radius: 30px;
+
     background: linear-gradient(
         135deg,
         var(--section-blue) 0%,
         var(--section-white) 50%,
         var(--section-purple) 100%
     );
-    position: relative;
-    z-index: 1000;
-    
 }
+
+
+/* =========================================
+   LOGO
+========================================= */
+
 .logo {
+    padding: 5px 10px;
+
+    border: 2px solid var(--border-color);
+
     font-size: 24px;
     font-weight: 600;
-    padding: 5px 10px;
-    border: 2px solid var(--border-color);
-}
-.talk-btn {
-    padding: 12px 24px;
-    background: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 24px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-.talk-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
 
-.hamburger {
-    display: none;
-    background: transparent;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--text-color);
-}
+/* =========================================
+   NAV LINKS
+========================================= */
 
 .navbar ul {
     display: flex;
     align-items: center;
-    z-index: 9999;
     gap: 28px;
 
     list-style: none;
+    z-index: 9999;
 }
+
 .navbar ul li a {
     position: relative;
+
     color: var(--text-color);
+
     text-decoration: none;
+
     font-size: 18px;
+
     transition: color 0.3s ease;
 }
+
 .navbar ul li a::after {
     content: "";
+
     position: absolute;
+
     left: 0;
     bottom: -7px;
+
     width: 0;
     height: 2px;
+
     background: var(--accent-color);
+
     transition: width 0.3s ease;
 }
+
 .navbar ul li a:hover {
     color: var(--accent-color);
 }
+
 .navbar ul li a:hover::after {
     width: 100%;
 }
 
+
+/* =========================================
+   LET'S TALK BUTTON
+========================================= */
+
+.talk-btn {
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 24px;
+
+    background: var(--primary-blue);
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.talk-btn:hover {
+    background: var(--primary-blue-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   HAMBURGER
+========================================= */
+
+.hamburger {
+    display: none;
+
+    padding: 5px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
 
 main {
     flex: 1;
@@ -141,17 +227,25 @@ main {
 }
 
 
+/* =========================================
+   COMMON SECTION
+========================================= */
 
 .section1 {
     margin: 15px;
+
     position: relative;
+
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
-    /* border: 2px solid var(--border-color); */
+
     border-radius: 30px;
+
     background: linear-gradient(
         135deg,
         var(--section-blue) 0%,
@@ -160,11 +254,15 @@ main {
     );
 }
 
+
+/* =========================================
+   HERO
+========================================= */
+
 .hero {
     min-height: calc(100vh - 100px);
 
     margin: 15px;
-
     padding: 70px 8%;
 
     display: flex;
@@ -173,6 +271,10 @@ main {
 
     gap: 50px;
 
+    position: relative;
+
+    overflow: hidden;
+
     border-radius: 30px;
 
     background: linear-gradient(
@@ -181,63 +283,74 @@ main {
         var(--section-white) 50%,
         var(--section-purple) 100%
     );
-
-    overflow: hidden;
-
-    position: relative;
 }
 
+
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
     max-width: 650px;
+
     position: relative;
+
     z-index: 2;
 }
 
-
 .hero-tag {
     display: inline-block;
+
     margin-bottom: 20px;
     padding: 8px 16px;
+
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 30px;
+
     background: rgba(255, 255, 255, 0.25);
+
     backdrop-filter: blur(10px);
+
     font-size: 15px;
 }
 
-
 .hero h1 {
-    font-size: clamp(45px, 6vw, 80px);
-    line-height: 1.05;
-    letter-spacing: -3px;
     margin-bottom: 25px;
-}
 
+    font-size: clamp(45px, 6vw, 80px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+}
 
 .hero h1 span {
-    color: #2563eb;
+    color: var(--primary-blue);
 }
-
 
 .hero-description {
     max-width: 550px;
-    color: var(--muted-color);
-    font-size: 18px;
-    line-height: 1.7;
+
     margin-bottom: 35px;
+
+    color: var(--muted-color);
+
+    font-size: 18px;
+
+    line-height: 1.7;
 }
 
 
+/* =========================================
+   HERO BUTTONS
+========================================= */
 
 .hero-buttons {
     display: flex;
-
     align-items: center;
 
     gap: 15px;
 }
-
 
 .primary-btn,
 .secondary-btn {
@@ -252,35 +365,32 @@ main {
     transition: 0.3s ease;
 }
 
-
 .primary-btn {
-    background: #2563eb;
+    border: 2px solid var(--primary-blue);
+
+    background: var(--primary-blue);
 
     color: white;
-
-    border: 2px solid #2563eb;
 }
 
-
 .primary-btn:hover {
-    background: #1d4ed8;
+    background: var(--primary-blue-dark);
 
     transform: translateY(-3px);
 
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.3);
 }
 
-
 .secondary-btn {
-    color: var(--text-color);
-
     border: 1px solid rgba(34, 34, 34, 0.4);
 
     background: rgba(255, 255, 255, 0.25);
 
     backdrop-filter: blur(10px);
-}
 
+    color: var(--text-color);
+}
 
 .secondary-btn:hover {
     background: rgba(255, 255, 255, 0.5);
@@ -289,62 +399,91 @@ main {
 }
 
 
+/* =========================================
+   HERO VISUAL
+========================================= */
+
 .hero-visual {
     width: 420px;
     height: 420px;
-    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
 }
 
+
+/* =========================================
+   DECORATIVE CIRCLES
+========================================= */
 
 .circle {
     position: absolute;
+
     border-radius: 50%;
+
     filter: blur(2px);
 }
-
 
 .circle-1 {
     width: 280px;
     height: 280px;
-    background: rgba(37, 99, 235, 0.18);
+
     top: 20px;
     right: 20px;
-}
 
+    background: rgba(37, 99, 235, 0.18);
+}
 
 .circle-2 {
     width: 220px;
     height: 220px;
-    background: rgba(189, 150, 238, 0.3);
+
     bottom: 20px;
     left: 20px;
+
+    background: rgba(189, 150, 238, 0.3);
 }
 
 
+/* =========================================
+   CODE CARD
+========================================= */
 
 .code-card {
     width: 340px;
-    padding: 20px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-    position: relative;
-    z-index: 2;
-    transform: rotate(75deg);
-    transition: 1s ease;
-}
 
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 2;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+
+    transform: rotate(75deg);
+
+    transition: transform 1s ease;
+}
 
 .code-card:hover {
     transform: rotate(0deg) translateY(-8px);
 }
 
 
+/* =========================================
+   CODE CARD HEADER
+========================================= */
 
 .card-header {
     display: flex;
@@ -353,7 +492,6 @@ main {
 
     margin-bottom: 25px;
 }
-
 
 .card-header span {
     width: 10px;
@@ -364,32 +502,286 @@ main {
     background: #777;
 }
 
-
-
 .code-content {
-    font-family: "Courier New", monospace;
-    font-size: 15px;
-    line-height: 2;
     color: #333;
-}
 
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+
+    line-height: 2;
+}
 
 .purple {
     color: #7c3aed;
 }
-
 
 .green {
     color: #16803c;
 }
 
 
+/* =========================================
+   PROJECT SECTION
+========================================= */
+
+.project-section {
+    height: 100vh;
+
+    min-height: 600px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PROJECT HEADING
+========================================= */
+
+.project-heading {
+    position: absolute;
+
+    top: 70px;
+    left: 6%;
+
+    z-index: 50;
+}
+
+.project-heading span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--muted-color);
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+}
+
+.project-heading h2 {
+    margin: 0;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   PROJECT CAROUSEL
+========================================= */
+
+.project-carousel {
+    position: absolute;
+
+    top: 290px;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: 430px;
+
+    overflow: visible;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+    width: 240px;
+    height: 270px;
+
+    padding: 25px;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+
+    cursor: pointer;
+
+    will-change: transform, opacity;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   PROJECT CARD CONTENT
+========================================= */
+
+.project-number {
+    color: var(--muted-color);
+
+    font-size: 14px;
+}
+
+.project-card h3 {
+    margin-top: 55px;
+
+    font-size: 26px;
+}
+
+.project-card p {
+    margin-top: 15px;
+
+    color: var(--muted-color);
+
+    line-height: 1.5;
+}
+
+.project-card small {
+    display: block;
+
+    margin-top: 25px;
+
+    color: var(--primary-blue);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer-box {
+    width: 100%;
+    min-height: 10vh;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border-color);
+}
+
+.copyright {
+    color: var(--muted-color);
+
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--muted-color);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-color);
+}
+
+
+/* =========================================
+   TABLET / MOBILE NAVBAR
+========================================= */
+
 @media (max-width: 700px) {
+
+    .navbar {
+        min-height: 10vh;
+
+        padding: 15px 25px;
+
+        flex-direction: row;
+    }
+
+    .navbar ul {
+        display: none;
+
+        position: absolute;
+
+        top: calc(100% + 10px);
+        right: 0;
+
+        min-width: 180px;
+
+        padding: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+
+        border: 1px solid white;
+        border-radius: 20px;
+
+        background: linear-gradient(
+            135deg,
+            var(--section-blue),
+            var(--section-white),
+            var(--section-purple)
+        );
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+    }
+
+    .talk-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+
+    /* =====================================
+       HERO
+    ===================================== */
 
     .hero {
         min-height: auto;
+
         padding: 70px 25px;
+
         flex-direction: column;
+
         text-align: center;
     }
 
@@ -402,171 +794,178 @@ main {
     }
 
     .hero-description {
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
     }
 
     .hero-buttons {
         justify-content: center;
+
         flex-wrap: wrap;
     }
 
     .hero-visual {
         width: 100%;
         max-width: 420px;
+
         height: 350px;
     }
-
 
     .code-card {
         width: min(340px, 90%);
     }
+
+
+    /* =====================================
+       FOOTER
+    ===================================== */
+
+    .footer-box {
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
 }
 
 
-@media (max-width: 500px) {
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .section1 {
+        min-height: 450px;
+
+        border-radius: 20px;
+    }
+
+
+    /* =====================================
+       HERO
+    ===================================== */
 
     .hero {
         margin: 10px;
 
-        border-radius: 20px;
-
         padding: 50px 20px;
-    }
 
+        border-radius: 20px;
+    }
 
     .hero h1 {
         font-size: 45px;
     }
 
-
     .hero-description {
         font-size: 16px;
     }
 
-
     .hero-buttons {
-        flex-direction: column;
-
         width: 100%;
-    }
 
+        flex-direction: column;
+    }
 
     .primary-btn,
     .secondary-btn {
         width: 100%;
     }
 
-
     .hero-visual {
         height: 300px;
     }
 
-
     .code-card {
         font-size: 13px;
     }
-}
 
 
-.footer-box {
-    min-height: 10vh;
-    width: 100%;
+    /* =====================================
+       PROJECT HEADING
+    ===================================== */
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .project-heading {
+        top: 50px;
 
-    padding: 0 5%;
-
-    border-top: 1px solid var(--border-color);
-}
-.copyright {
-    color: var(--muted-color);
-    font-size: 14px;
-}
-.footer-links {
-    display: flex;
-    gap: 20px;
-}
-.footer-links a {
-    color: var(--muted-color);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-.footer-links a:hover {
-    color: var(--text-color);
-}
-
-
-
-@media (max-width: 700px) {
-
-    .navbar {
-        min-height: 10vh;
-        padding: 15px 25px;
-        flex-direction: row;
-        position: relative;
+        left: 30px;
     }
 
-    /* Hide normal navigation */
-    .navbar ul {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
+    .project-heading h2 {
+        font-size: 48px;
+    }
 
-        flex-direction: column;
-        align-items: flex-start;
+
+    /* =====================================
+       PROJECT MOBILE SCROLL
+    ===================================== */
+
+    .project-carousel {
+        top: 190px;
+
+        height: 330px;
+
+        display: flex;
+
         gap: 20px;
 
-        padding: 25px;
-        min-width: 180px;
+        padding: 20px;
 
-        border-radius: 20px;
+        overflow-x: auto;
+        overflow-y: hidden;
 
-        background: linear-gradient(
-            135deg,
-            var(--section-blue),
-            var(--section-white),
-            var(--section-purple)
-        );
+        scroll-snap-type: x mandatory;
 
-        border: 1px solid white;
+        scrollbar-width: none;
     }
 
-    /* Show navigation when JS adds active */
-    .navbar ul.active {
-        display: flex;
-    }
-
-    .navbar ul li a {
-        font-size: 16px;
-    }
-
-    /* Hide Let's Talk on mobile */
-    .talk-btn {
+    .project-carousel::-webkit-scrollbar {
         display: none;
     }
 
-    /* Show hamburger */
-    .hamburger {
-        display: block;
+
+    /* =====================================
+       PROJECT CARD MOBILE
+    ===================================== */
+
+    .project-card {
+        width: 230px;
+        height: 270px;
+
+        flex: 0 0 230px;
+
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        transform: none !important;
+
+        opacity: 1 !important;
+
+        z-index: 1 !important;
+
+        scroll-snap-align: center;
     }
 
-    .section1 {
-        min-height: 450px;
-        border-radius: 20px;
+    .project-card h3 {
+        margin-top: 35px;
+
+        font-size: 22px;
     }
 
-    .footer-box {
-        flex-direction: column;
-        gap: 12px;
-        padding: 20px;
-    }
 
-    .footer-links {
-        gap: 15px;
+    /* =====================================
+       CURSOR TRAIL OFF ON MOBILE
+    ===================================== */
+
+    .cursor-circle {
+        display: none;
     }
 }

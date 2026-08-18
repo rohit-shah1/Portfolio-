@@ -1,0 +1,280 @@
+/* =================================
+   PROJECT SECTION
+================================= */
+
+.project-section {
+
+    position: relative;
+
+    /*
+       Section ki height SAME rahegi.
+       Ye section ko bada nahi karega.
+    */
+
+    height: 100vh;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+}
+
+
+/* =================================
+   HEADING
+================================= */
+
+.project-heading {
+
+    position: absolute;
+
+    top: 70px;
+
+    left: 6%;
+
+    z-index: 50;
+
+}
+
+
+.project-heading span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    color: var(--muted-color);
+
+}
+
+
+.project-heading h2 {
+
+    margin: 0;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1;
+
+}
+
+
+/* =================================
+   CAROUSEL AREA
+================================= */
+
+.project-carousel {
+
+    position: absolute;
+
+    /*
+       Carousel heading ke niche se start hoga
+    */
+
+    left: 0;
+
+    right: 0;
+
+    top: 290px;
+
+    /*
+       Fixed height.
+
+       Isse project section
+       expand nahi hoga.
+    */
+
+    height: 430px;
+
+    overflow: visible;
+
+}
+
+
+/* =================================
+   PROJECT CARD
+================================= */
+
+.project-card {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 240px;
+
+    height: 270px;
+
+    padding: 25px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+
+    cursor: pointer;
+
+    /*
+       JS transform handle karega
+    */
+
+    will-change: transform, opacity;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+/* =================================
+   CARD HOVER
+================================= */
+
+.project-card:hover {
+
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =================================
+   CARD CONTENT
+================================= */
+
+.project-number {
+
+    font-size: 14px;
+
+    color: var(--muted-color);
+
+}
+
+
+.project-card h3 {
+
+    margin-top: 55px;
+
+    font-size: 26px;
+
+}
+
+
+.project-card p {
+
+    margin-top: 15px;
+
+    color: var(--muted-color);
+
+    line-height: 1.5;
+
+}
+
+
+.project-card small {
+
+    display: block;
+
+    margin-top: 25px;
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .project-heading {
+        left: 30px;
+        top: 50px;
+    }
+
+    .project-heading h2 {
+        font-size: 48px;
+    }
+
+    .project-carousel {
+        position: absolute;
+
+        top: 190px;
+        left: 0;
+
+        width: 100%;
+        height: 330px;
+
+        display: flex;
+
+        gap: 20px;
+
+        padding: 20px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+    }
+
+
+    /* Chrome / Edge / Safari */
+
+    .project-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .project-card {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        flex: 0 0 230px;
+
+        width: 230px;
+        height: 270px;
+
+        /*
+           JS animation ko disable
+        */
+
+        transform: none !important;
+
+        opacity: 1 !important;
+
+        z-index: 1 !important;
+
+        scroll-snap-align: center;
+    }
+
+
+    .project-card h3 {
+        margin-top: 35px;
+
+        font-size: 22px;
+    }
+
+}
